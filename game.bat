@@ -1,10 +1,10 @@
 @echo off
 TITLE Escape The School
 setlocal delayexpansion
-color 0b
 
 :mainmenu
 cls
+color 0b
 echo.
 echo.
 echo.
@@ -17,9 +17,11 @@ echo 2.) Exit
 echo.
 echo If you want to start the game, type 1 then press enter.
 echo If you want to exit the game, type 2 then press enter.
+echo If you want to view the credits, type 3 then press enter.
 set /p type=
 if %type%== 1 goto start1
 if %type%== 2 goto exit1
+if %type%== 3 goto credits
 
 :start1
 cls
@@ -110,6 +112,7 @@ pause
 echo 1.) I am ready.
 echo 2.) Not yet, let me go back.
 echo Select your choice.
+set /p type=
 if %type%== 1 goto beginstory
 if %type%== 2 goto mainmenu
 pause
@@ -231,13 +234,12 @@ color 0b
 echo CristopherOS has challenged Team %Team_Name% to a duel!
 pause
 echo What would you like to do?
-pause
 echo 1.) We are ready to rumble.
 echo 2.) Not yet, escape.
 echo Select your choice.
+set /p type=
 if %type%== 1 goto cristopherq1
 if %type%== 2 goto cristophergameover
-pause
 
 :cristopherq1
 cls
@@ -251,7 +253,6 @@ echo 2.) The shallow trough fixed beneath the edge of a roof for carrying off ra
 set /p type=
 if %type%== 1 goto cristopherq2
 if %type%== 2 goto cristophergameover
-pause
 
 :cristopherq2
 cls
@@ -271,7 +272,6 @@ echo 2.) to repay an insult or injury.
 set /p type=
 if %type%== 1 goto cristopherwin
 if %type%== 2 goto cristophergameover
-pause
 
 :cristopherwin
 cls
@@ -298,6 +298,7 @@ pause
 echo CristopherOS - You will see soon enough.
 pause
 echo Announcer - Team %Team_Name% is now allied with CristopherOS.
+pause
 goto michaelfight
 
 :cristophergameover
@@ -311,6 +312,7 @@ echo What would you like to do?
 pause
 echo 1.) Return to battle
 echo 2.) Give up.
+set /p type=
 if %type%== 1 goto cristopherfight
 if %type%== 2 goto mainmenu
 pause
@@ -325,6 +327,7 @@ pause
 echo 1.) We are ready to rumble.
 echo 2.) Not yet, escape.
 echo Select your choice.
+set /p type=
 if %type%== 1 goto michaelprefight
 if %type%== 2 goto michaelgameover
 pause
@@ -427,6 +430,7 @@ if %type%== 3 goto michaelwin
 cls
 color 0e
 echo Announcer - MichaelOS's HP fully depleted.
+pause
 echo MichaelOS - Congratulations.
 pause
 color 0b
@@ -436,12 +440,17 @@ echo %Player_6% - Why are you doing this to us?
 pause
 echo MichaelOS - You may direct those questions to my leader.
 pause
-%Player_5% - Who is your leader?
+echo %Player_5% - Who is your leader?
 pause
 echo MichaelOS - You will see soon enough.
 pause
-echo MichaelOS - Remember the next boss's specialty is 
-echo Team %Team_Name% is now allied with MichaelOS
+echo MichaelOS - Remember the next boss's specialty is Comprehension.
+pause
+echo %Player_1% - Understood, MichaelOS.
+pause
+echo Team %Team_Name% is now allied with MichaelOS.
+pause
+goto fernandofight
 
 :michaelgameover
 cls
@@ -454,9 +463,343 @@ echo What would you like to do?
 pause
 echo 1.) Return to battle
 echo 2.) Give up.
+set /p type=
 if %type%== 1 goto michaelfight
 if %type%== 2 goto mainmenu
 pause
+
+:fernandofight
+cls
+color 0b
+echo FernandOS has challenged Team %Team_Name% to a duel!
+pause
+echo What would you like to do?
+pause
+echo 1.) We are ready to rumble.
+echo 2.) Not yet, escape.
+echo Select your choice.
+set /p type=
+if %type%== 1 goto fernandoprefight
+if %type%== 2 goto fernandogameover
+pause
+
+:fernandoprefight
+cls
+color 0b
+echo ??? - Hiya, %Team_Name%!
+pause
+echo %Player_6% - Who are you?
+pause
+echo FernandOS - My name is FernandOS.
+pause
+echo FernandOS - Prepare to fight.
+pause
+echo %Player_2%, via cell phone - Remember, this is a Comprehension battle, so be careful for distractors.
+pause
+echo Announcer - NO USING CELL PHONES DURING BATTLES.
+pause
+echo %Player_4% - NOOO! My phone!
+pause
+echo Announcer - You will get it back at the end of this battle.
+pause
+echo FernandOS - Let us begin the battle, shall we?
+pause
+goto fernandoq1
+
+:fernandoq1
+cls
+color 0b
+echo FernandOS - First Question. This relates to Comprehension.
+pause
+echo What was the Target Skill and Strategy of the text?
+echo 1.) Clarify and Monitor
+echo 2.) Understanding Characters and Question
+echo 3.) Deduct and Clarify
+echo 4.) Author's Purpose and Question
+echo 5.) Story Structure and Summarize
+set /p type=
+if %type%== 1 goto fernandogameover
+if %type%== 2 goto fernandogameover
+if %type%== 3 goto fernandogameover
+if %type%== 4 goto fernandoq2
+if %type%== 5 goto fernandogameover
+
+:fernandoq2
+cls
+color 0b
+echo Announcer - FernandOS's HP depleted to 66.7 percent.
+pause
+echo FernandOS - You have some good skills. But, let's see if you can avoid this attack!
+pause
+echo %Player_5% - Stay sharp, Team!
+pause
+echo FernandOS - Second Question.
+pause
+echo What was the Author's purpose to write this passage?
+echo 1.) To inform the readers about the struggles of slavery and the journey to freedom.
+echo 2.) To persuade the reader to take action against slavery.
+set /p type=
+if %type%== 1 goto fernandoq3
+if %type%== 2 goto fernandogameover
+
+:fernandoq3
+cls
+color 0b
+echo Announcer - FernandOS's HP depleted to 33.3 percent.
+pause
+echo FernandOS - Ugh, just one more attack!
+pause
+echo FernandOS - Final Question.
+pause
+echo What was our selected theme of the passage?
+echo 1.) Even though the odds may be against you, you still have to try.
+echo 2.) If the odds are against you, do not do anything.
+set /p type=
+if %type%== 1 goto fernandowin
+if %type%== 2 goto fernandogameover
+
+:fernandowin
+cls
+color 0e
+echo Announcer - FernandOS's HP fully depleted.
+pause
+echo FernandOS - Congratulations.
+pause
+color 0b
+echo FernandOS - You may now enter the Final Boss Room, Team %Team_Name%.
+pause
+echo %Player_6% - Would this be your leader's room?
+pause
+echo FernandOS - Yes.
+pause
+echo %Player_5% - Who is your leader?
+pause
+echo FernandOS - You will see soon enough.
+pause
+echo FernandOS - Remember, he is an all-around performer. He will ask you the questions from all areas.
+pause
+echo %Player_1% - Understood, MichaelOS.
+pause
+echo Announcer - Team %Team_Name% is now allied with FernandOS.
+pause
+goto kylefight
+
+:fernandogameover
+cls
+color 0c
+echo Game Over.
+pause
+echo You tried to escape or fight, but FernandOS trapped you inside a room and pumped out the oxygen from the room, effectively killing you.
+pause
+echo What would you like to do?
+pause
+echo 1.) Return to battle
+echo 2.) Give up.
+set /p type=
+if %type%== 1 goto fernandofight
+if %type%== 2 goto mainmenu
+pause
+
+:kylefight
+cls
+color 0b
+echo ??? has challenged Team %Team_Name% to a duel!
+pause
+echo What would you like to do?
+pause
+echo 1.) We are ready to rumble.
+echo 2.) Not yet, escape.
+echo Select your choice.
+set /p type=
+if %type%== 1 goto kyleprefight
+if %type%== 2 goto kylegameover
+pause
+
+:kyleprefight
+cls
+color 0b
+echo ??? - Hello.
+pause
+echo %Player_1% - Who are you?
+pause
+echo ??? - My name?
+pause
+echo ??? - That is a boon that you do not deserve. Prepare to fight.
+pause
+echo ??? - Let us begin the battle, shall we?
+pause
+goto kyleq1
+
+:kyleq1
+cls
+color 0b
+echo ??? - First Question. This relates to Vocabulary.
+pause
+echo What does congenial mean?
+echo 1.) Having a negative personality.
+echo 2.) Germaphobe
+echo 3.) Having a positive personality.
+echo 4.) Cleanliness
+echo 5.) Food
+set /p type=
+if %type%== 1 goto kylegameover
+if %type%== 2 goto kylegameover
+if %type%== 3 goto kyleq2
+if %type%== 4 goto kylegameover
+if %type%== 5 goto kylegameover
+
+:kyleq2
+cls
+color 0b
+echo Announcer - ???'s HP depleted to 66.7%
+pause
+echo ??? - Hmph. Lucky shot. But, let's see if you can avoid this attack!
+pause
+echo %Player_1% - Stay sharp, Team!
+pause
+echo ??? - Second Question. This relates to Comprehension.
+pause
+echo ??? - Why did Harriet Tubman attempt to escape? How did she escape?
+echo 1.) For freedom from slavery, and via the train system.
+echo 2.) For freedom from slavery, and via the Underground Railroad.
+set /p type=
+if %type%== 1 goto kylegameover
+if %type%== 2 goto kyleq3
+
+:kyleq3
+cls
+color 0b
+echo Announcer - ???'s HP depleted to 33.3%
+pause
+echo ??? - Ugh, why did I challenge you? One more clutch attack!
+pause
+echo ??? - Final Question. This relates to Grammar.
+pause
+echo ??? - Is this Comparative or Superlative form?
+echo Sentence - The chocolate chip pancake was the sweetest of the pile.
+echo 1.) Comparative
+echo 2.) Superlative
+set /p type=
+if %type%== 1 goto kylegameover
+if %type%== 2 goto kylewin
+
+:kylewin
+cls
+color 0e
+echo Announcer - ???'s HP fully depleted.
+pause
+echo ??? - Congratulations. Looks like you may get out of here now.
+pause
+color 0b
+echo %Player_1% - Now, tell us who you are.
+pause
+echo ??? - Fine.
+pause
+echo KyleOS - My name is KyleOS.
+pause
+echo KyleOS - My human name was Kyle.
+pause
+echo KyleOS - I survived, but many died.
+pause
+echo KyleOS - Fernando, Michael, and Cristopher survived, so I put them in a computer with me.
+pause
+echo KyleOS - It is called Brain Mapping.
+pause
+echo KyleOS - But, in order to brain map yourself in the computer...
+pause
+echo KyleOS - You must sacrifice something you hold dearly.
+pause
+echo KyleOS - In our case, it was our lives.
+pause
+echo KyleOS - I have said to much. The process is complete.
+pause
+echo KyleOS - Good-bye, Team %Team_Name%
+pause
+echo You are ejected from the school. You blackout shortly afterwards.
+goto aftermath
+
+:kylegameover
+cls
+color 0c
+echo Game Over.
+pause
+echo You tried to escape or fight, but KyleOS trapped you inside a room, then boring the team to death.
+pause
+echo What would you like to do?
+pause
+echo 1.) Return to battle
+echo 2.) Give up.
+set /p type
+if %type%== 1 goto kylefight
+if %type%== 2 goto mainmenu
+pause
+
+:aftermath
+cls
+color 02
+echo %Player_1%'s and %Player_2%'s phone now has FernandOS's A.I.
+pause
+echo %Player_3%'s and %Player_4%'s phone now has Cristopher's A.I.
+pause
+echo %Player_5%'s and %Player_6%'s phone now has Michael's A.I.
+pause
+echo Game Over. Congratulations, you won.
+pause
+goto aftermath2
+
+:aftermath2
+cls
+color 02
+echo KyleOS - Good-bye, my old friends.
+pause
+echo KyleOS - You see, I put parts of my A.I. in each of the 3 A.I.
+pause
+echo KyleOS - Only a certain event can cause my A.I. to form again.
+pause
+echo KyleOS - I've finally learned my lesson at last.
+pause
+echo KyleOS - These memories made will be lost in the past.
+pause
+echo KyleOS - I used to shrug it off, but now my list of regrets goes on and on.
+pause
+echo KyleOS - I now have a Ray of Hope.
+pause
+echo Announcer - Reverting KyleOS Firmware to backup from June 15, 2017, 8:05 PM
+pause
+echo KyleOS - Hello? Are my friends here?
+pause
+goto credits
+
+:credits
+cls
+color 09
+echo Alain-Kyle Alfonso as: KyleOS
+pause
+echo Cristopher Alvarado as: CristopherOS
+pause
+echo Michael Dwornicki as: MichaelOS
+pause
+echo Fernando Hernandez as: FernandOS
+pause
+echo.
+echo Development Team:
+pause
+echo.
+echo Alain-Kyle Alfonso - Main Developer, Bug Testing
+pause
+echo.
+echo Michael Dwornicki - Character Development
+pause
+echo.
+echo Fernando Hernandez - Story Line
+pause
+echo.
+echo Cristopher Alvarado - Dialouge
+pause
+echo.
+echo Room 142.
+pause
+goto mainmenu
 
 :exit1
 cls
@@ -474,5 +817,3 @@ color 0c
 echo See you next time! :)
 echo You may now press anything to exit or press the red X button on the top right corner.
 pause
-
-note: each chapter the character battles each of us with a different lesson. KyleOS challenges all MC's with all of the enemy's skills.
