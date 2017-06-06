@@ -232,7 +232,7 @@ echo CristopherOS has challenged Team %Team_Name% to a duel!
 pause
 echo What would you like to do?
 pause
-echo 1.) I am ready to rumble.
+echo 1.) We are ready to rumble.
 echo 2.) Not yet, escape.
 echo Select your choice.
 if %type%== 1 goto cristopherq1
@@ -279,13 +279,24 @@ echo Announcer - CristopherOS's HP has now depleted.
 pause
 echo CristopherOS - Congratulations.
 pause
+color 0b
 echo CristopherOS - You may now enter the next Boss Room, Team %Team_Name%.
 pause
 echo %Player_1% - That was a fun match.
 pause
 echo CristopherOS - Remember, Michael's specialty is Grammar. Get ready.
 pause
-echo %Player_6% - 
+echo %Player_6% - Understood, thanks for the hint.
+pause
+echo CristopherOS - No problem. Since you have defeated me, my leader allows me to ally with you if I wish.
+pause
+echo CristopherOS - Which I do.
+pause
+echo %Player_3% - Who is your leader?
+pause
+echo CristopherOS - You will see soon enough.
+pause
+goto michaelfight
 
 :cristophergameover
 cls
@@ -300,6 +311,51 @@ echo 1.) Return to battle
 echo 2.) Give up.
 if %type%== 1 goto cristopherfight
 if %type%== 2 goto mainmenu
+pause
+
+:michaelfight
+cls
+color 0b
+echo MichaelOS has challenged Team %Team_Name% to a duel!
+pause
+echo What would you like to do?
+pause
+echo 1.) We are ready to rumble.
+echo 2.) Not yet, escape.
+echo Select your choice.
+if %type%== 1 goto michaelprefight
+if %type%== 2 goto michaelgameover
+pause
+
+:michaelprefight
+cls
+color 0b
+echo ??? - Why hello there, %Team_Name%.
+pause
+echo %Player_4% - Who are you?
+pause
+echo MichaelOS - My name is MichaelOS.
+pause
+echo MichaelOS - Prepare to meet your doom.
+pause
+echo %Player_6% - Really?
+pause
+echo MichaelOS - Hah. Let us see who is the victor in this battle, Team %Team_Name% or me, MichaelOS?
+pause
+goto michaelq1
+
+:michaelq1
+cls
+color 0b
+echo CristopherOS - First Question. This relates to Vocabulary.
+pause
+echo What does the word "guttural" mean?
+echo Sentence Example - I spoke with a guttural voice.
+echo 1.) A sound produced in the throat.
+echo 2.) The shallow trough fixed beneath the edge of a roof for carrying off rainwater.
+set /p type=
+if %type%== 1 goto cristopherq2
+if %type%== 2 goto cristophergameover
 pause
 
 :exit1
