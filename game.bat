@@ -200,7 +200,7 @@ echo %Player_6% - I have a theory. What if the students that died in the Fire of
 pause
 echo %Player_3% - Eh. This is really out there, but it is a possiblity.
 pause
-echo %Player_2% - True.
+echo %Player_2%, via cell phone - True.
 pause
 echo %Player_4% - Do you guys know what time it is right now?
 pause
@@ -266,7 +266,26 @@ echo CristopherOS - Second Question.
 pause
 echo What does the word "retorted" mean?
 echo Sentence Example - "Hm, you seem to not have evidence. How can we know if this accusation is true or not?"
-echo 1.) 
+echo 1.) Say something in answer to a remark or accusation, typically in a sharp, angry, or wittily incisive manner.
+echo 2.) to repay an insult or injury.
+set /p type=
+if %type%== 1 goto cristopherwin
+if %type%== 2 goto cristophergameover
+
+:cristopherwin
+cls
+color 0e
+echo Announcer - CristopherOS's HP has now depleted.
+pause
+echo CristopherOS - Congratulations.
+pause
+echo CristopherOS - You may now enter the next Boss Room, Team %Team_Name%.
+pause
+echo %Player_1% - That was a fun match.
+pause
+echo CristopherOS - Remember, Michael's specialty is Grammar. Get ready.
+pause
+echo %Player_6% - 
 
 :cristophergameover
 cls
