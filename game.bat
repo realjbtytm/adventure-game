@@ -260,7 +260,7 @@ echo Announcer - CristopherOS's HP depleted to 50 percent.
 pause
 echo CristopherOS - Ugh, you got me. But, let's see if I can get you with this question!
 pause
-echo %Player_1% - Uh oh. Get ready for Round 2!
+echo %Player_2%, via cellphone - Uh oh. Get ready for Round 2!
 pause
 echo CristopherOS - Second Question.
 pause
@@ -271,6 +271,7 @@ echo 2.) to repay an insult or injury.
 set /p type=
 if %type%== 1 goto cristopherwin
 if %type%== 2 goto cristophergameover
+pause
 
 :cristopherwin
 cls
@@ -296,6 +297,7 @@ echo %Player_3% - Who is your leader?
 pause
 echo CristopherOS - You will see soon enough.
 pause
+echo Announcer - Team %Team_Name% is now allied with CristopherOS.
 goto michaelfight
 
 :cristophergameover
@@ -347,15 +349,113 @@ goto michaelq1
 :michaelq1
 cls
 color 0b
-echo CristopherOS - First Question. This relates to Vocabulary.
+echo MichaelOS - First Question. This relates to Grammar.
 pause
-echo What does the word "guttural" mean?
-echo Sentence Example - I spoke with a guttural voice.
-echo 1.) A sound produced in the throat.
-echo 2.) The shallow trough fixed beneath the edge of a roof for carrying off rainwater.
+echo What were the prefixes shown during the presentation?
+echo 1.) con-
+echo 2.) com-
+echo 3.) pre-
+echo 4.) pro-
+echo 5.) All of the above.
 set /p type=
-if %type%== 1 goto cristopherq2
-if %type%== 2 goto cristophergameover
+if %type%== 1 goto michaelgameover
+if %type%== 2 goto michaelgameover
+if %type%== 3 goto michaelgameover
+if %type%== 4 goto michaelgameover
+if %type%== 5 goto michaelq2
+
+:michaelq2
+cls
+color 0b
+echo Announcer - MichaelOS's HP depleted to 75 percent.
+pause
+echo MichaelOS - Ugh, you got me. But, let's see if I can get you with this question! HAHAHAHA
+pause
+echo %Player_2%, via cell phone - Uh oh. Get ready for Round 2!
+pause
+echo CristopherOS - Second Question.
+pause
+echo Is this a superlative or comparative form sentence?
+echo Sentence - This cookie was the most delicious from the pack.
+echo 1.) Comparative form.
+echo 2.) Superlative form.
+set /p type=
+if %type%== 1 goto michaelgameover
+if %type%== 2 goto michaelq3
+
+:michaelq3
+cls
+color 0b
+echo Announcer - MichaelOS's HP depleted to 50 percent.
+pause
+echo MichaelOS - Ugh, you got me AGAIN. But, let's see if I can get you with this question! HAHAHAHA
+pause
+echo %Player_2%, via cell phone - Uh oh. Get ready for Round 3!
+pause
+echo MichaelOS - Third Question.
+pause
+echo Is this a superlative or comparative form sentence?
+echo Sentence - The last day of this school year will be louder than the first day of the school year.
+echo 1.) Comparative form.
+echo 2.) Superlative form.
+set /p type=
+if %type%== 1 goto michaelq4
+if %type%== 2 goto michaelgameover
+
+:michaelq4
+cls
+color 0b
+echo Announcer - MichaelOS's HP depleted to 25 percent.
+pause
+echo MichaelOS - Uh oh. Ugh, I need to hit a land on you to win! Let me hit you one more time! Please?
+pause
+echo %Player_2%, via cell phone - Uh oh. Get ready for the last round!
+pause
+echo MichaelOS - Final Question.
+pause
+echo Is this a Comparative Form of Adverbs, Superlative Form of Adverbs, or incorrect form?
+echo Sentence - I found it the easiestly to create this game.
+echo 1.) Comparative form.
+echo 2.) Superlative form.
+echo 3.) Wrong form.
+set /p type=
+if %type%== 1 goto michaelgameover
+if %type%== 2 goto michaelgameover
+if %type%== 3 goto michaelwin
+
+:michaelwin
+cls
+color 0e
+echo Announcer - MichaelOS's HP fully depleted.
+echo MichaelOS - Congratulations.
+pause
+color 0b
+echo MichaelOS - You may now enter the next Boss Room, Team %Team_Name%.
+pause
+echo %Player_6% - Why are you doing this to us?
+pause
+echo MichaelOS - You may direct those questions to my leader.
+pause
+%Player_5% - Who is your leader?
+pause
+echo MichaelOS - You will see soon enough.
+pause
+echo MichaelOS - Remember the next boss's specialty is 
+echo Team %Team_Name% is now allied with MichaelOS
+
+:michaelgameover
+cls
+color 0c
+echo Game Over.
+pause
+echo You tried to escape or fight, but MichaelOS trapped you inside a room and filled it with glitter, killing you via suffocation.
+pause
+echo What would you like to do?
+pause
+echo 1.) Return to battle
+echo 2.) Give up.
+if %type%== 1 goto michaelfight
+if %type%== 2 goto mainmenu
 pause
 
 :exit1
