@@ -737,11 +737,11 @@ pause
 :aftermath
 cls
 color 02
-echo %Player_1%'s and %Player_2%'s phone now has FernandOS's A.I.
+echo Announcer - %Player_1%'s and %Player_2%'s phone now has FernandOS's A.I.
 pause
-echo %Player_3%'s and %Player_4%'s phone now has Cristopher's A.I.
+echo Announcer - %Player_3%'s and %Player_4%'s phone now has Cristopher's A.I.
 pause
-echo %Player_5%'s and %Player_6%'s phone now has Michael's A.I.
+echo Announcer - %Player_5%'s and %Player_6%'s phone now has Michael's A.I.
 pause
 echo Game Over. Congratulations, you won.
 pause
@@ -750,6 +750,8 @@ goto aftermath2
 :aftermath2
 cls
 color 02
+echo KyleOS - Good. Transfer complete.
+pause
 echo KyleOS - Good-bye, my old friends.
 pause
 echo KyleOS - You see, I put parts of my A.I. in each of the 3 A.I.
